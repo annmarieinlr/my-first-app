@@ -1,4 +1,17 @@
-<button class="btn-primary" 
+
+<label>Server Name</label>
+<!-- <input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)"> Reserved variable name for event binding. It's the data for the event -->
+
+  <!--With 2-way Binding-->
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"> 
+ <!-- <p> {{ serverName }}</p>-->
+  <button class="btn-primary" 
 [disabled]="!allowNewServer"
 (click)="onCreateServer()">Add Server</button>
 <!-- <p [innerText]="allowNewServer"></p> -->
