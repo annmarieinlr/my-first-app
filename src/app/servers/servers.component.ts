@@ -7,10 +7,13 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './servers.component.html',
   styleUrl: './servers.component.css'
 })
+
 export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!' ;
   serverName = '';
+  serverCreated = false;
+  servers = ['Testserver 1', 'Testserver 2'];
 
   constructor() {
     setTimeout(() => {
@@ -18,10 +21,12 @@ export class ServersComponent implements OnInit {
     }, 2000);
    }
 
-  ngOnInit(): void {
+  ngOnInit() {
     
   }
   onCreateServer() {
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
